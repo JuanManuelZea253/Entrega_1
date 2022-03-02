@@ -1,0 +1,227 @@
+*{
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+}
+img:hover{
+    filter: opacity(.5);
+}
+body{
+    background-color: rgb(28, 31, 39);
+}
+/*HEADER*/
+.Header{
+    width: 100%;
+    background-color: rgb(83, 85, 97);
+    border-radius: 30px;
+}
+
+.Header nav ul{
+    margin: 0;
+    padding: 0;
+}
+.Header nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+.Header nav > ul > li > a {
+    color: white;
+    background-color:rgb(133, 139, 139);
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+    border-radius: 20px;
+}
+.Header a:hover{
+    background-color: rgb(39, 47, 68);
+    border-radius: 20px;
+}
+/*FOOTER*/
+.footer{
+    background-color: rgb(83, 85, 97);
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50px;
+}
+.footer p{
+    padding: 10px;
+    color: #fff;
+}
+
+/* contenedor principal*/
+.contenedorPrincipal{
+    display: flex;
+    flex-direction: row;
+    align-items:baseline;
+    justify-content:space-between;
+    align-content: center;
+    padding: 0px;
+    margin: 5px;
+}
+/*Contenedor uno*/
+.contenedorUno{
+    display: flex;
+    padding: 5px;
+    border-radius: 7px;
+    flex-direction: column;
+    align-items:flex-start;
+    background-color: rgb(255, 255, 255);
+    width: 22%;
+
+}
+.tituloSubscribe{
+    width:100%;
+    background-color: rgb(39, 47, 68);
+}
+.tituloSubscribe h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    margin-left: 10px; 
+}
+.formulario ul,li{
+    list-style: none;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    
+}
+.formulario label{
+    background-color:rgb(55, 76, 114);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+.formulario input{
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+    border-color:white;
+    opacity: 0.7;
+
+}
+.formulario button{
+    background-color: rgb(55, 76, 114);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding: 5px;
+    margin-left:50px ;
+    width: 60%;
+    border-radius: 20px;
+    border: solid;
+    border-color:rgb(55, 76, 114) ;
+}
+
+/*contenedor dos*/
+.contenedorDos{
+    display: flex;
+    padding: 5px;
+    flex-direction:column;
+    background-color:rgba(255, 255, 255, 0.884);
+    border-radius: 7px;
+    width: 53%;
+}
+
+.textinit{
+    width: 100%;
+    background-color:steelblue;
+}
+ .textinit h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;
+    text-align: center;
+}
+.dentroContenedor{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+ .dentroContenedor .itemImg:nth-last-child(1){
+     flex:55%;
+     padding: 5px;
+     flex-direction: row;
+     
+}
+.dentroContenedor .itemImg:nth-last-child(2){
+    padding: 5px;   
+}
+
+.itemImg img{
+    margin: 3px;
+}
+.itemTituloTrailer{
+    background-color: steelblue;
+    text-align: center;
+}
+.itemTituloTrailer h1{
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.itemTrailer{
+    padding: 5px;
+    text-align: center;
+}
+/*Contenedor tres*/
+.contenedorTres{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    width: 23%;
+}
+
+.contenedorTresHijo{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+
+}
+.contenedorTresTexto{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-around;
+    width: 55%;
+    padding: 5px;
+    padding-top: 0;
+
+
+
+}
+.Textos:nth-child(1){
+    width: 100%;
+    
+}
+.Textos:nth-child(2){
+    width: 100%;
+}
+
+.Textos a {
+    color: rgb(98, 107, 112);
+    font-size:larger;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.Textos a:hover{
+    color: rgb(55, 76, 114);
+}
+.contenedorTresImg{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.tituloNoticias{
+    background-color: rgb(39, 47, 68);
+    margin:5px ;
+}
+.tituloNoticias h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    margin-left: 10px; 
+}
