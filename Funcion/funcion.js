@@ -1,15 +1,16 @@
-let nombreCancion = "cancion";
-let activador  = false;
+let Canciones = ["cancioncita", "tema", "notema"];
+let activador  = true;
+let nombre = "Temardo";
 
-const Cancion = (nombreCancion, activador) => {
-    let Canciones = ["cancioncita", "tema", "notema"];
+const Cancion = (Canciones, activador,nombreCancion) => {
+    
         
             if (nombreCancion != "" && activador == true){
-                Canciones.push(nombreCancion);
+                Canciones.splice(2,0,nombreCancion);
             }else if(activador == false){
-                Canciones.pop();
+                Canciones.splice(0,1);
             }
         
     return Canciones;
 }
-console.log(Cancion(nombreCancion,activador));
+console.log(Cancion(Canciones,activador,nombre));
