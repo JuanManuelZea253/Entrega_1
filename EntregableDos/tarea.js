@@ -268,7 +268,7 @@ const sumarArray = (numeros,cb) =>{
       result += object;
     });
     cb = result;
-    return cb;
+
 }
 let numArray = new Int32Array([1,2,3,4,5]);
 console.log(sumarArray(numArray, 0));
@@ -282,7 +282,7 @@ const copiarEach = (array, cb) =>{
      cb.push(object);
       
     });
-    return cb;
+   
   }
   let entrada = [1,"dos",3.1];
   let salida = [];
