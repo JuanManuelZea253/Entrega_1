@@ -1,9 +1,11 @@
 {
   "scripts": {
     "test": "jest"
-    
   },
   "devDependencies": {
     "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "react-scripts": "^5.0.1"
   }
 }

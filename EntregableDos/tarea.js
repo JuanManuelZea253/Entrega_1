@@ -25,13 +25,13 @@ function tienenMismaLongitud(str1, str2) {
     // Devuelve "true" si las dos strings tienen la misma longitud
     // De lo contrario, devuelve "false"
     // Tu código:
-    if(str1.lenght === str2.lenght){
+    if (str1.length === str2.length){
       return true;
-    }else if (str1.lenght != str2.lenght){
+    }else{
       return false;
     }
   }
-  console.log(tienenMismaLongitud("Hola", "holi"));
+  console.log(tienenMismaLongitud("ha", "holi"));
   //punto4
   function esPositivo(numero) {
     //La función va a recibir un entero. Devuelve como resultado una cadena de texto que indica si el número es positivo o negativo. 
@@ -47,7 +47,7 @@ function tienenMismaLongitud(str1, str2) {
       return false;
     }
   }
-  console.log(esPositivo(-1))
+  console.log(esPositivo(10))
   //punto5
   const colors = (color)=>{
     //La función recibe un color. Devolver el string correspondiente:
@@ -99,10 +99,11 @@ function tienenMismaLongitud(str1, str2) {
   const devolverPrimerElemento = (array) => {
     // Devuelve el primer elemento de un array
     // Tu código:
+    
     return array[0];
    
   }
-  array = ["array",2,false];
+  array = ["cancer",2,false];
   console.log(devolverPrimerElemento(array));
   //punto8
   const agregarItemAlFinalDelArray = (array, elemento) =>{
@@ -161,11 +162,14 @@ function tienenMismaLongitud(str1, str2) {
     // Agrega "nuevoAmigo" al final de ese array
     // Devuelve el objeto "usuario"
     // // Tu código:
-    usuario.amigos = ['Sebastian','Pedro']
     usuario.amigos.push(nuevoAmigo);
     return usuario;
   }
-  console.log(agregarAmigo(objUsuario, 'Raúl'));
+  let amigosProve = {
+    nombre: 'Carlos',
+    amigos: ['mateo', 'carla'],
+  }
+  console.log(agregarAmigo(amigosProve, 'Raúl'));
   //punto14
   const pasarUsuarioAPremium = usuarios => {
     // "usuarios" es un array de objetos "usuario"
@@ -186,38 +190,32 @@ function tienenMismaLongitud(str1, str2) {
   console.log(pasarUsuarioAPremium(usuarios));
 
   //punto15
-  const sumarLikesDeUsuario = usuario => {
+   //punto15
+   const sumarLikesDeUsuario = usuario => {
     // "usuario" tiene una propiedad llamada "posts" que es un array
     // "posts" es un array de objetos "post"
     // Cada objeto "post" tiene una propiedad llamada "likes" que es un entero (int/integer)
     // Suma todos los likes de todos los objetos "post"
     // Devuelve la suma
     // Tu código:
-       let cantidadLikes = 0; 
-       usuario.posts = [
-         {
-          id:1,  
-          nombre:'ferroviario destrozado',       
-          likes: 4,
-          },
-          {
-            id:2,
-            nombre:'familia canibal',
-            likes: 10,
-          },
-          {
-            id:3,
-            nombre:'el problema de las redes',
-            likes:40,
-          }
-        ];
+       let cantidadLikes = 0;
         usuario.posts.forEach(element => {
           cantidadLikes += element.likes;
         });
-        
+       
         return cantidadLikes;
   }
- console.log(sumarLikesDeUsuario(objUsuario));
+
+let obj = {
+  posts:[{
+    id:1,
+    likes:50,
+  },{
+    id:2,
+    likes:10,
+  }]
+}
+ console.log(sumarLikesDeUsuario(obj));
   // ---------------------------------------------------------------------------//
   //Crea el constructor de la clase "Persona"
   //Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio"
@@ -265,19 +263,21 @@ const sumarArray = (numeros,cb) =>{
     // Suma todos los números enteros (int/integers) de un array ("numeros")
     // Pasa el resultado a `cb`
     // No es necesario devolver nada
-
+    let result = 0;
     numeros.forEach(object => {
-      cb += object;
+      result += object;
     });
+    cb = result;
     return cb;
 }
-let numArray = new Int32Array([12,2,3,4,5]);
+let numArray = new Int32Array([1,2,3,4,5]);
 console.log(sumarArray(numArray, 0));
 //punto19
 const copiarEach = (array, cb) =>{
     // Itera sobre la matriz "array" y pasa los valores a cb uno por uno
     // Pista: Estarás invocando a `cb` varias veces (una por cada valor en el array)
     // no tienes que devolver nada
+    cn = [];
     array.forEach(object => {
      cb.push(object);
       
