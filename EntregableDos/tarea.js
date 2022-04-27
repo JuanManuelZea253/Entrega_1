@@ -277,7 +277,7 @@ const copiarEach = (array, cb) =>{
     // Itera sobre la matriz "array" y pasa los valores a cb uno por uno
     // Pista: Estarás invocando a `cb` varias veces (una por cada valor en el array)
     // no tienes que devolver nada
-    cn = [];
+    cb = [];
     array.forEach(object => {
      cb.push(object);
       
