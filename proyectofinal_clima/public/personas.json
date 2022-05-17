@@ -1,0 +1,15 @@
+ [{
+   "id": 1,
+  "nombre":"maria",
+  "cantidadDolares":1000,
+  "contraseña": "soymillonaria"
+},
+{
+    "id": 2,
+    "nombre":"daniela",
+    "cantidadDolares":2000,
+    "contraseña":"soytuputita"
+
+}]
+
+
