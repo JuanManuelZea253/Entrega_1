@@ -21,7 +21,6 @@ const Login = () => {
     let [contraseña, setContraseña] = useState('');
     const [validacion, setValidacion] = useState(false);
     let [ciudad,setCiudad] = useState('');
-
     const people = useDataLogin();
     
 
@@ -60,7 +59,7 @@ const Login = () => {
                     value={nombre}
                 />
                 <input
-                    type="text"
+                    type="password"
                     placeholder="Contraseña"
                     onChange={ev => setContraseña(ev.target.value)}
                     value={contraseña}
