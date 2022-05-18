@@ -1,65 +1,79 @@
-import React,{useState,useEffect} from "react";
-//import personas from "./src/personas";
+import React, { useState,useEffect} from "react";
+import Weather from "./Weather";
 
-const useData = () =>{
-    const [isPersonas, setPersonas] = useState([]);
 
-        useEffect( () =>{
-            fetch('./personas.json')
-            .then ((response)=>response.json())
-            .then ((personas) =>{
-                setPersonas(personas);
-                
-             
-            })
-           
+export const useDataLogin = () => {
+    const [isData, setData] = useState([]);
+    useEffect(() => {
+        fetch('./json/personas.json')
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data);
+            });
+    }, []);
 
-        },[])
 
-        
-       return isPersonas;
+    return isData;
 }
 
-const Login= ()=>{
-    const [nombre, setNombre] = useState('');
-    const [contraseña, setContraseña] = useState('');
+const Login = () => {
+    let [nombre, setNombre] = useState('');
+    let [contraseña, setContraseña] = useState('');
+    const [validacion, setValidacion] = useState(false);
+    let [ciudad,setCiudad] = useState('');
 
-    const people  = useData();
-   console.log(people[0]);
- 
+    const people = useDataLogin();
+    
 
+    const Validate = () => {
 
+        if (people) {
+            
+            people.forEach(item => {
+                
 
- 
+                if (item.nombre === nombre && item.contraseña === contraseña) {
+                    setValidacion(true);
+                    setCiudad(item.ciudad);
+                    nombre = item.nombre;
+                    ciudad = item.ciudad ;
+                    contraseña = item.contraseña;
+                }
+            })
+            return validacion;
+        }
+    }
     return (
-       <div className="login">
-           {people.map(item =>(
-               <li key={item.id}>
-                   <p>{item.nombre}</p>
-               </li>)
-           )}
-       
-           
-           <form>
-               <input 
-               type="text"
-               placeholder="Nombre"
-               onChange= {ev => setNombre(ev.target.value)}
-               value={nombre}
-               />
-                <input 
-               type="text"
-               placeholder="Contraseña"
-               onChange= {ev => setContraseña(ev.target.value)}
-               value={contraseña}
-               />
 
-               
+        <div className="login">
+     
+           { validacion ?
+           <Weather
+              nombre= {nombre}
+              ciudad = {ciudad}
+              contraseña = {contraseña}/>:
+            <form>
+                <input
+                    type="text"
+                    placeholder="Nombre"
+                    onChange={ev => setNombre(ev.target.value)}
+                    value={nombre}
+                />
+                <input
+                    type="text"
+                    placeholder="Contraseña"
+                    onChange={ev => setContraseña(ev.target.value)}
+                    value={contraseña}
+                />
+                <button
+                    type="submit"
+                    onClick={Validate}
 
-           
-           </form>
-
-       </div> 
+                >ingresar
+                </button>
+            </form>    
+            }
+        </div>
     )
 }
 

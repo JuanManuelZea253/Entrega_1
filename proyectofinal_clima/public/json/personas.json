@@ -1,13 +1,13 @@
  [{
    "id": 1,
   "nombre":"maria",
-  "cantidadDolares":1000,
+  "ciudad":"Medellín",
   "contraseña": "soymillonaria"
 },
 {
     "id": 2,
     "nombre":"daniela",
-    "cantidadDolares":2000,
+    "ciudad":"Sidney",
     "contraseña":"soytuputita"
 
 }]
