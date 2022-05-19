@@ -35,7 +35,7 @@ const Login = () => {
                     setValidacion(true);
                     setCiudad(item.ciudad);
                     nombre = item.nombre;
-                    ciudad = item.ciudad ;
+                   ciudad = item.ciudad ;
                     contraseña = item.contraseña;
                 }
             })
@@ -43,14 +43,15 @@ const Login = () => {
         }
     }
     return (
+        
 
         <div className="login">
-     
-           { validacion ?
-           <Weather
-              nombre= {nombre}
-              ciudad = {ciudad}
-              contraseña = {contraseña}/>:
+            { validacion?
+                <Weather
+                nombre = {nombre}
+                contraseña = {contraseña}
+                ciudad = {ciudad}/>
+                :
             <form>
                 <input
                     type="text"
@@ -70,8 +71,9 @@ const Login = () => {
 
                 >ingresar
                 </button>
-            </form>    
-            }
+            </form> }
+
+    
         </div>
     )
 }
