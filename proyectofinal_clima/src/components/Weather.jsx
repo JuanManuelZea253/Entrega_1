@@ -1,14 +1,15 @@
-import React//{useState}
-from "react";
+import React,{useState,useEffect}from "react";
+
 
 
 
 const Weather = (props)=>{
-   
-    console.log(props);
+   console.log(props);
    const nombre = props.nombre;
    const ciudad = props.ciudad;
- //  let contraseña = props.contraseña;
+   const pais = props.pais;
+   const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${apiKey}`
+
 
 
 

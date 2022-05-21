@@ -2,12 +2,14 @@
    "id": 1,
   "nombre":"maria",
   "ciudad":"Medellín",
+  "pais":"Colombia",
   "contraseña": "soymillonaria"
 },
 {
     "id": 2,
     "nombre":"daniela",
     "ciudad":"Sidney",
+    "pais":"Australia",
     "contraseña":"soyabogada"
 
 }]
