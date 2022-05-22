@@ -1,7 +1,7 @@
 
 import dataLogin from  "./components/dataLogin";
 import Weather from "./components/Weather";
-import {useState}from 'react'
+import React,{useState}from 'react'
 import './App.css';
 
 
@@ -13,23 +13,25 @@ function App() {
     let[pais,setPais]=useState('')
     const people = dataLogin();
 
-     const Validate =  () => {
 
-        if (people) {
-            
-            people.forEach(item => {
-                if (item.nombre === nombre && item.contraseña === contraseña) {
-                    setValidacion(true);
-                    setCiudad(item.ciudad);
-                    setPais(item.pais);
-                    nombre = item.nombre;
-                   ciudad = item.ciudad ;
-                   pais=item.pais
-                }
-            })
-            return validacion;
+  const Validate = () => {
+
+    if (people) {
+
+      people.forEach(item => {
+        if (item.nombre === nombre && item.contraseña === contraseña) {
+          setValidacion(true);
+          setCiudad(item.ciudad);
+          setPais(item.pais);
+          nombre = item.nombre;
+          contraseña = item.contraseña
+          ciudad = item.ciudad;
+          pais = item.pais
         }
-    } 
+      })
+      return validacion;
+    }
+  } 
   return (
     <div className="App">
     {validacion?
