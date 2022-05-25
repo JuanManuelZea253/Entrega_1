@@ -1,13 +1,13 @@
  [{
    "id": 1,
-  "nombre":"maria",
+  "nombre":"Maria",
   "ciudad":"Medellín",
   "pais":"Colombia",
   "contraseña": "soymillonaria"
 },
 {
     "id": 2,
-    "nombre":"daniela",
+    "nombre":"Daniela",
     "ciudad":"Sidney",
     "pais":"Australia",
     "contraseña":"soyabogada"

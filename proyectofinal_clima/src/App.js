@@ -1,26 +1,27 @@
 
-import dataLogin from  "./components/dataLogin";
+import dataLogin from "./components/dataLogin";
 import Weather from "./components/Weather";
-import React,{useState}from 'react'
+import React, { useState } from 'react';
 import './App.css';
+
 
 
 function App() {
   let [nombre, setNombre] = useState('');
-    let [contraseña, setContraseña] = useState('');
-    const [validacion, setValidacion] = useState(false);
-    let [ciudad,setCiudad] = useState('');
-    let[pais,setPais]=useState('')
-    const people = dataLogin();
+  let [contraseña, setContraseña] = useState('');
+  const [validacion, setValidacion] = useState(false);//variable bandera para activar el onclick del botton login
+  let [ciudad, setCiudad] = useState('');
+  let [pais, setPais] = useState('')
+  const people = dataLogin();
 
-
+  //validacion e ingreso de datos desde el json
   const Validate = () => {
 
     if (people) {
 
       people.forEach(item => {
         if (item.nombre === nombre && item.contraseña === contraseña) {
-          setValidacion(true);
+          setValidacion(true);//manejo del estado variable validacion
           setCiudad(item.ciudad);
           setPais(item.pais);
           nombre = item.nombre;
@@ -31,37 +32,51 @@ function App() {
       })
       return validacion;
     }
-  } 
+  }
   return (
     <div className="App">
-    {validacion?
-      <Weather
-        nombre={nombre}
-        contraseña={contraseña}
-        ciudad={ciudad}
-        pais={pais}
-      />:
 
-        <form className="login">
-          <input
-            type="text"
-            placeholder="Nombre"
-            onChange={ev => setNombre(ev.target.value)}
-            value={nombre}
-          />
-          <input
-            type="password"
-            placeholder="Contraseña"
-            onChange={ev => setContraseña(ev.target.value)}
-            value={contraseña}
-          />
-          <button
-            type="submit"
-            onClick={Validate}
+      {validacion ?
+        /* Validacion de la variable estado validate */
+        <Weather
+          nombre={nombre}
+          pais={pais}
+          ciudad={ciudad} />
+        :
+        <div className="login">
+          <h1>Climatch</h1>
 
-          >ingresar
-          </button>
-        </form>}
+          <form id="formLogin">
+            <li>
+
+              <input
+                id="inputs"
+                type="text"
+                placeholder="Nombre"
+                onChange={ev => setNombre(ev.target.value)}/* ingreso de nombre */
+                value={nombre}
+              />
+            </li>
+            <li>
+              <input
+                id="inputs"
+                type="password"
+                placeholder="Contraseña"
+                onChange={ev => setContraseña(ev.target.value)}/* ingreso de contraseña */
+                value={contraseña}
+              />
+            </li><br />
+
+            <button
+
+              type="submit"
+              onClick={Validate}/* Evento de activación funcion validate*/
+            >ingresar
+            </button>
+          </form>
+        </div>
+      }
+
     </div>
   );
 }

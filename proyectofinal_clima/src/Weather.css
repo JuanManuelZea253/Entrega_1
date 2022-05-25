@@ -1,0 +1,117 @@
+/*Div principal*/
+.Weather {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/*Contenedor respuesta del formulario contiene imagen colapsada con texto encima*/
+.forecast {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+}
+
+
+
+/* Texto Personas ingresadas */
+.textoPersona {
+    text-align: left;
+    margin-right: 50px;
+    width: 50%;
+    height: 100%;
+}
+
+.textoPersona li {
+    text-align: right;
+    list-style: none;
+}
+
+.textoPersona h1 {
+    margin-bottom: -2px;
+}
+
+.textoPersona h3 {
+    margin-bottom: -2px;
+    margin-top: -1px;
+}
+
+
+
+/*Texto resultado de busquedad del formulario*/
+.textoWeather {
+    width: 50%;
+    margin-left: 30px;
+    text-align: left;
+}
+
+.textoWeather li {
+    list-style: none;
+    text-align: left;
+}
+
+
+
+/* Imagen que colapsa contenedor forecast con sus textos respectivos*/
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* hover cambia los efectos de la imagen*/
+img:hover {
+    filter: grayscale(50%);
+}
+
+
+/*Contenedor del texto a proporcionar encima de la imagen*/
+.textoEncima {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    top: 10px;
+    left: 10px;
+
+}
+
+/* Formulario de busqueda */
+
+/* los inputs comparten estilos con los del login, 
+los button son diferentes por terminos de espacio*/
+
+/*contenedor del formulario*/
+.weatherSearch {
+    background-color: rgb(224, 233, 237);
+    display: flex;
+    width: 100%;
+    height: 32%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+
+}
+
+#formSearch li {
+    list-style: none;
+}
+
+#weatherButton {
+    height: 30px;
+    width: 45%;
+    margin: 5px;
+    font-family: Helvetica;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    background-color: rgb(105, 169, 212);
+    font-size: medium;
+    font-weight: bold;
+}
